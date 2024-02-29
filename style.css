@@ -101,9 +101,10 @@ p {
 .carousel {
   margin: 2rem auto;
   padding: 2rem 0;
-  max-width: 800px;
+  max-width: 80vw;
   text-align: center;
   background-color: var(--carousel-bg-color);
+  overflow-x: hidden;
 }
 .carousel input {
   display: none;
@@ -629,6 +630,9 @@ progress::-moz-progress-bar {
   }
   .contact-cards {
     grid-template-columns: repeat(4, 24%);
+  }
+  .carousel {
+    max-width: 800px;
   }
   .footer {
     margin-bottom: 0;
