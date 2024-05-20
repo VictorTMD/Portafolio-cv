@@ -1,21 +1,21 @@
 /* !Custom Properties */
 :root {
-  --first-color: #d90062;
-  --first-alpha-color: rgba(217, 0, 98, 0.75);
-  --second-color: #14192d;
-  --second-alpha-color: rgba(20, 25, 45, 075);
-  --third-color: #501464;
+  --first-color: #25c2a0;
+  --first-alpha-color: #25c2a0;
+  --second-color: #242526;
+  --second-alpha-color: #242526;
+  --third-color: #1b1b1d;
   --third-alpha-color: rgba(80, 20, 100, 0.75);
   --white-color: #fff;
-  --gray-light-color: #f3f3f3;
+  --gray-light-color: #242526;
   --gray-color: #ccc;
   --gray-dark-color: #666;
   --black-color: #000;
   --link-color: #509ee3;
-  --title-color: #333;
-  --text-color: #222;
+  --title-color: #fff;
+  --text-color: #efdfdf;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
-  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --black-alpha-color: rgba(75, 73, 73, 0.5);
   --font: 'Raleway', sans-serif;
   --max-width: 1200px;
   --header-height: 4rem;
@@ -32,10 +32,12 @@ html {
 body {
   overflow-x: hidden;
   margin: 0;
+  background-color: #1b1b1d;
   color: var(--text-color);
 }
 
 a {
+  text-decoration: none;
   color: var(--link-color);
   transition: all 0.5s ease-out;
 }
@@ -97,13 +99,15 @@ p {
     transform: translateX(-75%);
   }
 }
+
 /* carousel */
 .carousel {
+  border-radius: 25px;
   margin: 2rem auto;
   padding: 2rem 0;
   max-width: 80vw;
   text-align: center;
-  background-color: var(--carousel-bg-color);
+  background-color: #1b1b1db5;
   overflow-x: hidden;
 }
 .carousel input {
@@ -127,7 +131,7 @@ p {
   display: inline-block;
   width: 0.75rem;
   height: 0.75rem;
-  border: medium solid var(--gray-dark-color);
+  border: medium solid var(--first-alpha-color);
   border-radius: 50%;
   cursor: pointer;
   margin: 0 0.25rem;
@@ -152,10 +156,11 @@ p {
 #slide-2:checked ~ .slides-nav label#dot-2,
 #slide-3:checked ~ .slides-nav label#dot-3,
 #slide-4:checked ~ .slides-nav label#dot-4 {
-  background-color: var(--gray-dark-color);
+  background-color: var(--first-color);
 }
 /* formulario de contacto */
 .contact-form {
+  background-color: var(--second-color);
   margin: 2rem auto;
   padding: 1rem;
   max-width: 800px;
@@ -166,19 +171,40 @@ p {
   display: block;
   width: 100%;
 }
+/* para el autocompletado del navegador */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  box-shadow: 0 0 0px 1000px #242526 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
 .contact-form input,
 .contact-form textarea {
   font-size: 0.85rem;
   font-family: var(--font);
 }
 .contact-form input {
+  color: var(--white-color);
+  background-color: var(--second-color);
   border: 0;
-  border-bottom: thin solid var(--gray-dark-color);
+  border-bottom: thin solid var(--first-alpha-color);
+  padding-left: 0;
+}
+.contact-form input button {
+  color: var(--white-color);
+  background-color: var(--second-color);
+  border: 0;
+  border-bottom: thin solid var(--first-alpha-color);
   padding-left: 0;
 }
 
 .contact-form textarea {
-  border: thin solid var(--gray-dark-color);
+  color: var(--white-color);
+  background-color: var(--second-color);
+  border: thin solid var(--first-alpha-color);
   resize: none;
 }
 .contact-form input[type='submit'] {
@@ -228,6 +254,9 @@ dale esto... */
   .contact-form input[type='submit'] {
     margin-left: 0;
   }
+}
+#enviar {
+  background-color: var(--first-alpha-color);
 }
 /* HeroImage */
 .hero-image {
@@ -455,6 +484,7 @@ progress::-moz-progress-bar {
   margin-bottom: 2rem;
 }
 .contact-card {
+  background-color: var(--second-color);
   margin: 1rem auto;
   padding: 1rem;
   width: 100%;
@@ -469,6 +499,7 @@ progress::-moz-progress-bar {
   width: 2rem;
   height: 2rem;
 }
+
 .contact-card > small {
   margin-top: -1rem;
 }
@@ -540,7 +571,7 @@ progress::-moz-progress-bar {
   height: 100%;
 }
 .portfolio-modal {
-  background-color: var(--white-color);
+  background-color: var(--second-color);
   padding: 1rem;
   max-width: 380px;
   display: flex;
@@ -579,6 +610,7 @@ progress::-moz-progress-bar {
   padding: 0 0.4rem;
 }
 .social-media svg {
+  fill: var(--first-alpha-color);
   width: 1.5rem;
   height: 1.5rem;
 }
