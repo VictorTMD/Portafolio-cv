@@ -387,10 +387,10 @@ progress::-webkit-progress-bar {
   background-color: var(--gray-color);
 }
 progress::-webkit-progress-value {
-  background-color: var(--gray-dark-color);
+  background-color: var(--first-color);
 }
 progress::-moz-progress-bar {
-  background-color: var(--gray-dark-color);
+  background-color: var(--first-color);
 }
 .progress {
   margin: 1rem auto; /* arriba y abajo 1em y auto a los lados */
@@ -696,8 +696,25 @@ progress::-moz-progress-bar {
   .ultimo {
     grid-column: span 2;
   }
+  .icons-tecnologic svg {
+    width: 80px;
+    height: 50px;
+  }
 
   /* .services .section-title {
     grid-column: span 3;
   } */
+}
+
+.icons-tecnologic {
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 150px;
+}
+.icons-tecnologic svg {
+  width: 45px;
 }
