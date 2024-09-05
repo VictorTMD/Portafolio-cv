@@ -258,13 +258,12 @@ dale esto... */
 #enviar {
   background-color: var(--first-alpha-color);
 }
-/* HeroImage */
 .hero-image {
-  background-image: var(--image);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: var(--hero-attachment);
+  background-image: var(--image); /* La imagen que quieras mostrar */
+  background-repeat: repeat-y; /* Para repetir la imagen verticalmente */
+  background-position: 50% 0%; /* Centra la imagen horizontalmente */
+  background-size: cover; /* Ajusta la imagen para cubrir el área */
+  animation: scroll-background 15s ease-in-out infinite; /* Animación continua */
 }
 .hero-image-opacity {
   width: 100%;
@@ -275,9 +274,56 @@ dale esto... */
   background-color: var(--hero-opacity-color);
   text-align: center;
 }
+
+/* Animación para simular el desplazamiento */
+@keyframes scroll-background {
+  0% {
+    background-position: 50% 0%; /* Empieza la imagen en la parte superior */
+  }
+  100% {
+    background-position: 50% 100%; /* Finaliza cuando la imagen ha bajado completamente */
+  }
+}
 .hero-image-title {
   font-size: 7.5vw; /* tamaño de letra que varia  segun el tamaño de pantalla*/
   color: var(--hero-text-color);
+  -webkit-animation: tracking-in-contract-bck 5s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract-bck 5s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+}
+@-webkit-keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+    transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+    transform: translateZ(400px);
+    opacity: 0;
+  }
+  20% {
+    /* Reduce el porcentaje donde la opacidad empieza a subir */
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }
 
 /* menu */
