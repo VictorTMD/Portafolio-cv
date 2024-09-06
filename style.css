@@ -227,10 +227,35 @@ input:-webkit-autofill:active {
 }
 .contact-form-response svg {
   margin-top: 2rem;
+  position: absolute;
   width: 4rem;
   height: 4rem;
   fill: var(--first-color);
 }
+
+.container-react {
+  background: #000;
+
+  width: 100%;
+}
+.container-react svg {
+  background: #111;
+  animation-name: rot;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 2s; /* Retraso de 2 segundos */
+  height: 200px;
+  padding-bottom: 50px;
+}
+@keyframes rot {
+  100% {
+    transform: rotate(
+      360deg
+    ); /* Regresa a la posición inicial a la izquierda con una rotación completa */
+  }
+}
+
 /* el elemento con clase modal que tenga el idgracias y cuando tenga el target
 dale esto... */
 .modal#gracias:target {
@@ -263,18 +288,31 @@ dale esto... */
   background-repeat: repeat-y; /* Para repetir la imagen verticalmente */
   background-position: 50% 0%; /* Centra la imagen horizontalmente */
   background-size: cover; /* Ajusta la imagen para cubrir el área */
-  animation: scroll-background 15s ease-in-out infinite; /* Animación continua */
+  animation: scroll-background 10s linear infinite; /* Animación continua */
+  animation-fill-mode: forwards; /* Mantiene el estado final antes de reiniciar */
+}
+@media (max-width: 768px) {
+  .hero-image {
+    animation: scroll-background 15s linear infinite; /* Animación continua */
+    background-size: contain; /* Cambia a 'contain' en pantallas pequeñas */
+  }
 }
 .hero-image-opacity {
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--hero-opacity-color);
   text-align: center;
 }
-
+.hero-image-cli {
+  background-image: var(--image); /* La imagen que quieras mostrar */
+  background-repeat: no repeat; /* Para repetir la imagen verticalmente */
+  background-position: center; /* Centra la imagen horizontalmente */
+  background-size: cover; /* Ajusta la imagen para cubrir el área */
+}
 /* Animación para simular el desplazamiento */
 @keyframes scroll-background {
   0% {
@@ -295,8 +333,8 @@ dale esto... */
 @-webkit-keyframes tracking-in-contract-bck {
   0% {
     letter-spacing: 1em;
-    -webkit-transform: translateZ(400px);
-    transform: translateZ(400px);
+    -webkit-transform: translateZ(200px);
+    transform: translateZ(200px);
     opacity: 0;
   }
   40% {
@@ -311,8 +349,8 @@ dale esto... */
 @keyframes tracking-in-contract-bck {
   0% {
     letter-spacing: 1em;
-    -webkit-transform: translateZ(400px);
-    transform: translateZ(400px);
+    -webkit-transform: translateZ(200px);
+    transform: translateZ(200px);
     opacity: 0;
   }
   20% {
